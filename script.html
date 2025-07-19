@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = []
+        let numeroPares = []
+
+        let numero = parseInt(prompt("Ingrese un numero: "))
+
+        while (numero >= 0 && numero <= 100){
+
+            numeros.push(numero)
+            numero = parseInt(prompt("Ingrese un numero: "))
+
+            if(numero < 0 || numero > 100){
+                numeros.push(numero)
+            }
+
+        }
+
+        pares()
+        elevarAlCuadrado(numeroPares)
+
+        console.log(numeroPares)
+
+        function pares(){
+            numeros.pop()
+            for(let i = 0; i < numeros.length; i++){
+                if(numeros[i] % 2 == 0){
+                    numeroPares.push(numeros[i])
+                }
+            }
+        }
+
+        function elevarAlCuadrado(numeroPares){
+            for(let i = 0; i < numeroPares.length; i++){
+                numeroPares[i] = Math.pow(numeroPares[i], 2)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let input = prompt("Ingrese numeros separados con una coma: ")
+        let arr = input.split(",").map(Number)
+
+        waveSort(arr)
+
+        function waveSort(arr) {
+            arr.sort((a, b) => a - b);
+
+            for (let i = 0; i < arr.length - 1; i += 2) {
+
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+
+            }
+
+            console.log(arr);
+        }
+    </script>
+</body>
+</html>
